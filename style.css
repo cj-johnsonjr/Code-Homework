@@ -1,0 +1,87 @@
+header,
+footer {
+  height: 75px;
+  font-size: 50px;
+  line-height: 75px;
+}
+header {
+  text-align: right;
+  color: rgb(0, 0, 123);
+  text-shadow: 2px 2px 4px rgb(238, 213, 104);
+  background-color: lightgrey;
+  margin: 2px;
+}
+.menu {
+  flex-basis: calc(100% / 3 - 6px);
+  text-align: center;
+  background-color: rgb(10, 0, 125);
+  color: rgb(238, 213, 104);
+  cursor: pointer;
+  margin: 2px;
+  border: 1px solid black;
+}
+.menu:hover {
+  background-color: white;
+  color: black;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Blockbuster_logo.svg/2560px-Blockbuster_logo.svg.png");
+  background-size: 125px;
+}
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+.home1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 80%;
+  background-color: rgb(10, 0, 125);
+}
+.home2 {
+  flex-direction: column;
+  flex-basis: 20%;
+  background-color: rgb(238, 213, 104);
+  display: flex;
+}
+.box {
+  border: 2px solid black;
+  margin: 5px;
+  min-height: 100px;
+  background-color: whitesmoke;
+  flex-basis: calc(100% / 3 - 14px);
+}
+.movie1 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 10%;
+  background-color: rgb(238, 213, 104);
+  align-self: start;
+}
+.movie2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 90%;
+  background-color: rgb(10, 0, 125);
+}
+.review {
+  border: 2px solid black;
+  margin: 5px;
+  min-height: 100px;
+  background-color: whitesmoke;
+  flex-basis: calc(100% / 2 - 14px);
+}
+.item {
+  border: 1px solid black;
+  margin: 2px;
+  background-color: white;
+  cursor: pointer;
+}
+.item:hover {
+  background-color: black;
+  color: darkred;
+}
