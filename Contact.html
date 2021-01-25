@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ContactUs</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header>BlockBuster</header>
@@ -14,8 +20,66 @@
       <a href="Contact.html" class="menu">Contact Us</a>
     </nav>
     <hr />
-    <div></div>
-
+    <div>
+      <form style="margin: 4px">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input
+            placeholder="John Smith"
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="Phone">Phone</label>
+          <input
+            placeholder="(123)-456-7890"
+            type="phone"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="EmailAddress" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Questions or Comments</label
+          >
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+        <p><strong>Best Way to Contact you?</strong></p>
+        <div class="3Checks">
+          <input type="checkbox" class="formcheck" id="PhoneCheck" />
+          <label class="formcheck" for="PhoneCheck">Phone</label>
+          <input type="checkbox" class="formcheck" id="EmailCheck" />
+          <label for="EmailCheck" class="formcheck">Email</label>
+          <input type="checkbox" class="formcheck" id="TextCheck" />
+          <label for="TextCheck" class="formcheck">Email</label>
+        </div>
+        <br />
+        <br />
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </div>
+    <hr />
     <footer></footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

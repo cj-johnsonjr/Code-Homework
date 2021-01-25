@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MovieReviews</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <header>BlockBuster</header>
+    <header id="TOP">BlockBuster</header>
     <nav>
       <a href="HomePage.html" class="menu">Home Page</a>
       <a href="MovieReviews.html" class="menu">Movie Reviews</a>
@@ -15,20 +21,44 @@
     </nav>
     <hr />
     <div class="parent">
-      <div class="movie1">
-        <div class="item">review 1</div>
-        <div class="item">review 2</div>
-        <div class="item">review 3</div>
-        <div class="item">review 4</div>
-        <div class="item">review 5</div>
-        <div class="item">review 6</div>
-        <div class="item">review 7</div>
-        <div class="item">review 8</div>
-        <div class="item">review 9</div>
-        <div class="item">review 10</div>
+      <div class="movie1 hello">
+        <div class="item">
+          <a href="#BladeRunner" title="BladeRunner">BladeRunner</a>
+        </div>
+        <div class="item">
+          <a href="#The Shining" title="The Shining">The Shining</a>
+        </div>
+        <div class="item">
+          <a href="#Big Lebowski" title="Big Lebowski">Big Lebowski</a>
+        </div>
+        <div class="item">
+          <a href="#Pulp Fiction" title="Pulp Fiction">Pulp Fiction</a>
+        </div>
+        <div class="item">
+          <a href="#The Lobster" title="The Lobster">The Lobster</a>
+        </div>
+        <div class="item"><a href="#Logan" title="Logan">Logan</a></div>
+        <div class="item">
+          <a href="#The Thing" title="The Thing">The Thing</a>
+        </div>
+        <div class="item">
+          <a href="#Tropic Thunder" title="Tropic Thunder">Tropic Thunder</a>
+        </div>
+        <div class="item"><a href="#Get Out" title="Get Out">Get Out</a></div>
+        <div class="item">
+          <a href="#Hereditary" title="Hereditary">Hereditary</a>
+        </div>
       </div>
       <div class="movie2">
-        <div class="review">
+        <div class="review" id="BladeRunner">
+          <div>
+            <img
+              class="photo"
+              src="https://upload.wikimedia.org/wikipedia/en/9/9f/Blade_Runner_%281982_poster%29.png"
+              alt="BladeRunner"
+              title="BladeRunner"
+            />
+          </div>
           <p>
             I'm baby tilde vexillologist tofu, farm-to-table four loko vape
             iPhone ugh franzen wayfarers meditation. Meggings cardigan cray
@@ -39,7 +69,15 @@
             tile gastropub franzen lomo.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="The Shining">
+          <div>
+            <img
+              class="photo"
+              src="https://upload.wikimedia.org/wikipedia/en/1/1d/The_Shining_%281980%29_U.K._release_poster_-_The_tide_of_terror_that_swept_America_IS_HERE.jpg"
+              alt="The Shining"
+              title="The Shining"
+            />
+          </div>
           <p>
             Disrupt green juice vice kogi air plant blue bottle occupy
             knausgaard tilde cray mlkshk. Jean shorts gentrify vexillologist,
@@ -54,7 +92,15 @@
             woke waistcoat typewriter palo santo chartreuse tofu vegan.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="Big Lebowski">
+          <div>
+            <img
+              class="photo"
+              src="https://resizing.flixster.com/KcKHZBgrSqjBJtLRWrYPMAleOY8=/206x305/v2/https://flxt.tmsimg.com/assets/p20484_p_v10_ab.jpg"
+              alt="The Big Lebowski"
+              title="The Big Lebowski"
+            />
+          </div>
           <p>
             Jianbing pok pok franzen, PBR&B waistcoat whatever taiyaki
             shoreditch authentic locavore activated charcoal irony migas put a
@@ -70,7 +116,15 @@
             glossier yuccie.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="Pulp Fiction">
+          <div>
+            <img
+              class="photo"
+              src="https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg"
+              alt="Pulp Fiction"
+              title="Pulp Fiction"
+            />
+          </div>
           <p>
             3 wolf moon coloring book tote bag, kale chips truffaut kogi
             typewriter small batch master cleanse. Fashion axe master cleanse
@@ -82,7 +136,15 @@
             cardigan squid vaporware disrupt skateboard.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="The Lobster">
+          <div>
+            <img
+              class="photo"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmbxtPTTbXrLrSnmVIzgaMa_-2XezH0e-WfQAA0W9JWycTse_2"
+              alt="The Lobster"
+              title="The Lobster"
+            />
+          </div>
           <p>
             Pour-over banjo tacos, listicle tilde sartorial wolf chartreuse
             photo booth single-origin coffee lyft pinterest hexagon kale chips
@@ -94,7 +156,15 @@
             marfa pug cronut.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="Logan">
+          <div>
+            <img
+              class="photo"
+              src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRLqupfOvC_hCQ2o_yzAD8UcArj3wbA38HNMeGl9dQNF3DdFgR5"
+              alt="Logan"
+              title="Logan"
+            />
+          </div>
           <p>
             Cray seitan pabst, chia biodiesel mumblecore shaman craft beer. Twee
             tumeric austin banh mi. Meh truffaut squid brunch chambray vape
@@ -107,7 +177,15 @@
             plaid skateboard lumbersexual kitsch cold-pressed seitan air plant.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="The Thing">
+          <div>
+            <img
+              class="photo"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhxVNfsiDiZMX1vCzivsbQIjI-qPXi_gtsuabQ2kue0bmQYtdk"
+              alt="The Thing"
+              title="The Thing"
+            />
+          </div>
           <p>
             IPhone skateboard swag iceland waistcoat small batch migas truffaut
             craft beer fam intelligentsia retro. Whatever chillwave +1
@@ -118,7 +196,15 @@
             actually quinoa small batch brooklyn fashion axe trust fund.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="Tropic Thunder">
+          <div>
+            <img
+              class="photo"
+              src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQeK0h6SlNK7EuC4x3iQ_xsivuK1akRvjJtp10XHCJ1Ddal4-5d"
+              alt="Tropic Thunder"
+              title="Tropic Thunder"
+            />
+          </div>
           <p>
             Vegan waistcoat gluten-free ennui tbh adaptogen taxidermy, pour-over
             tattooed jean shorts direct trade polaroid blue bottle everyday
@@ -130,7 +216,15 @@
             chic. Edison bulb leggings echo park pitchfork wayfarers.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="Get Out">
+          <div>
+            <img
+              class="photo"
+              src="https://www.google.com/url?sa=i&url=http%3A%2F%2Ft3.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcRzDpX6x-IiJdVRl_wP-Fqtr-Q9yuRHVEAvuIZ35BkEVZ6Yu34n&psig=AOvVaw3-f-fVaIEiO-xxXG6xMJPY&ust=1611546540832000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJi72erUs-4CFQAAAAAdAAAAABAD"
+              alt="Get Out"
+              title="Get Out"
+            />
+          </div>
           <p>
             Gastropub whatever snackwave echo park. Hashtag tousled tumblr, 90's
             marfa you probably haven't heard of them twee beard semiotics
@@ -139,7 +233,15 @@
             narwhal taiyaki pickled.
           </p>
         </div>
-        <div class="review">
+        <div class="review" id="Hereditary">
+          <div>
+            <img
+              class="photo Hereditary"
+              src="https://upload.wikimedia.org/wikipedia/en/d/d9/Hereditary.png"
+              alt="Hereditary"
+              title="Hereditary"
+            />
+          </div>
           <p>
             Helvetica pour-over iPhone beard, selfies keffiyeh health goth tacos
             gluten-free green juice. XOXO selfies pitchfork, dreamcatcher
@@ -150,6 +252,9 @@
           </p>
         </div>
       </div>
+    </div>
+    <div style="text-align: center">
+      <a href="#TOP" title="Back to the top">Back to the top</a>
     </div>
     <hr />
 
