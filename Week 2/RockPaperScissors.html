@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rock Paper Scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      main,
+      header {
+        display: block;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .heading {
+        color: red;
+      }
+
+      .container {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .flex33 {
+        flex-basis: 33%;
+      }
+
+      .content {
+        width: 100%;
+        margin: auto;
+        height: 50px;
+        margin: 5px;
+      }
+
+      .buttonContainer {
+        height: 50px;
+        justify-content: space-around;
+      }
+
+      .choice {
+        flex-basis: calc(100% / 5);
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      .rock {
+        background-color: brown;
+      }
+
+      .paper {
+        background-color: white;
+        color: black;
+      }
+
+      .scissors {
+        background-color: silver;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center">Rock Paper Scissors</h1>
+      <h2 class="text-center heading game">Game <span id="game">1</span></h2>
+      <div class="text-center container content" id="result">
+        <div class="text-center flex33">Wins: <span id="win">0</span></div>
+        <div class="text-center flex33">Ties: <span id="tie">0</span></div>
+        <div class="text-center flex33">Losses: <span id="loss">0</span></div>
+      </div>
+    </header>
+    <main>
+      <div class="content selection text-center" id="computer">
+        The Computer Hasn't picked yet
+      </div>
+      <div class="content selection text-center" id="user">
+        You haven't picked yet
+      </div>
+      <div class="content selection text-center"></div>
+      <div class="buttonContainer container content">
+        <button class="choice rock flex33" value="rock">Rock</button>
+        <button class="choice paper flex33" value="paper">Paper</button>
+        <button class="choice scissors flex33" value="scissors">
+          Scissors
+        </button>
+      </div>
+    </main>
+    <script>
+      let tieCounter = 0;
+      let wonCounter = 0;
+      let lossCounter = 0;
+      let gameCounter = 0;
+      let buttons = document.getElementsByClassName("choice");
+      for (i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function (evt) {
+          console.log(evt.target.value);
+          let computer = Math.floor(Math.random() * 3);
+          console.log(computer);
+          let value = evt.target.value;
+          let choices = ["rock", "paper", "scissors"];
+          document.getElementById(
+            "computer"
+          ).innerText = `The Computer has picked ${choices[computer]}`;
+          document.getElementById(
+            "user"
+          ).innerText = `You have picked ${value}`;
+          let tie = "You have Tied!";
+          let won = "You have Won!";
+          let loss = "You have Lost!";
+          if (evt.target.value == "rock") {
+            if (computer === 0) {
+              tieCounter++;
+              document.getElementById("tie").innerText = tieCounter;
+            }
+            if (computer === 1) {
+              lossCounter++;
+              document.getElementById("loss").innerText = lossCounter;
+            }
+            if (computer === 2) {
+              wonCounter++;
+              document.getElementById("win").innerText = wonCounter;
+            }
+          }
+          if (evt.target.value == "paper") {
+            if (computer === 0) {
+              wonCounter++;
+              document.getElementById("win").innerText = wonCounter;
+            }
+            if (computer === 1) {
+              tieCounter++;
+              document.getElementById("tie").innerText = tieCounter;
+            }
+            if (computer === 2) {
+              lossCounter++;
+              document.getElementById("loss").innerText = lossCounter;
+            }
+          }
+          if (evt.target.value == "scissors") {
+            if (computer === 0) {
+              lossCounter++;
+              document.getElementById("loss").innerText = lossCounter;
+            }
+            if (computer === 1) {
+              wonCounter++;
+              document.getElementById("win").innerText = wonCounter;
+            }
+            if (computer === 2) {
+              tieCounter++;
+              document.getElementById("tie").innerText = tieCounter;
+            }
+          }
+          gameCounter++;
+          document.getElementById("game").innerText = gameCounter;
+        });
+      }
+    </script>
+  </body>
+</html>

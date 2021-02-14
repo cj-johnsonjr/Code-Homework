@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie API</title>
+    <style>
+      .errorDiv {
+        color: red;
+      }
+      input {
+        width: 100px;
+        height: 10px;
+      }
+      .styling {
+        text-align: center;
+        margin: auto;
+        margin-bottom: 10px;
+      }
+      .title {
+        margin: auto;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="styling">IMDB SEARCH</h1>
+    <div class="styling">
+      <label for="query">Search for a movie/show:</label>
+      <input id="search" type="text" name="query" />
+      <div class="errorDiv" id="queryError"></div>
+    </div>
+    <div class="styling">
+      <label for="movieTypes"
+        >Please enter the type of search you are looking for:</label
+      >
+      <select name="movieTypes" id="type">
+        <option value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+      </select>
+    </div>
+    <div class="styling">
+      <label for="movieYear">Please enter year:</label>
+      <input
+        id="year"
+        name="movieYear"
+        type="number"
+        min="1900"
+        max="2099"
+        step="1"
+      />
+      <div id="yearError" class="errorDiv"></div>
+    </div>
+
+    <br />
+    <div class="styling">
+      <button id="fetch">Search</button>
+      <div id="searchError" class="errorDiv"></div>
+    </div>
+    <div id="numResults"></div>
+    <hr />
+    <div id="output">
+      <p id="plot"></p>
+    </div>
+
+    <script>
+      let checkErrArr1;
+      //   let checkErrArr2;
+      //   document.getElementById("search").addEventListener("blur", (e) => {
+      //     if (document.getElementById("search").value.length < 3) {
+      //       document.getElementById("queryError").innerText =
+      //         "Must enter 3 characters or more";
+      //       checkErrArr1 = false;
+      //     }
+      //     if (document.getElementById("search").value.length >= 3) {
+      //       document.getElementById("queryError").innerText = "";
+      //       checkErrArr1 = true;
+      //     }
+      //   });
+
+      document.getElementById("fetch").addEventListener("click", () => {
+        if (document.getElementById("search").value.length < 3) {
+          document.getElementById("queryError").innerText =
+            "Must enter 3 characters or more";
+          checkErrArr1 = false;
+        }
+        if (document.getElementById("search").value.length >= 3) {
+          document.getElementById("queryError").innerText = "";
+          checkErrArr1 = true;
+        }
+        if (checkErrArr1) {
+          document.getElementById("searchError").innerText = "";
+          let searchResult = document.getElementById("search").value;
+          let typeResult = document.getElementById("type").value;
+          let yearResult = document.getElementById("year").value;
+
+          fetch(
+            `http://www.omdbapi.com/?1=tt3896198=&apikey=e6fe3ad0&s=${searchResult}&type=${typeResult}&y=${yearResult}`
+          )
+            .then((response) => {
+              return response.json();
+            })
+            .then((response) => {
+              let tempTitles = document.getElementsByClassName("title");
+              if (tempTitles.length > 0) {
+                document.getElementById("output").innerText = "";
+              }
+              console.log(response);
+
+              for (let i = 0; i < response.Search.length; i++) {
+                let tempDiv = document.createElement("div");
+                let tempYear = document.createElement("div");
+                tempDiv.className = "title";
+                tempDiv.innerText = response.Search[i].Title;
+                document.getElementById("output").append(tempDiv);
+                tempYear.className = "yearResult";
+                tempYear.innerText = response.Search[i].Year;
+                document.getElementById("output").append(tempYear);
+                // document.getElementById("plot").innerText = response.Search[i].Year;
+              }
+
+              document.getElementById(
+                "numResults"
+              ).innerText = `You are viewing 1-10 of ${parseInt(
+                response.totalResults
+              )} results`;
+            });
+        } else {
+          document.getElementById("searchError").innerText =
+            "Please Fix the following errors";
+          document.getElementById("output").innerText = "";
+          document.getElementById("numResults").innerText = "";
+        }
+      });
+    </script>
+  </body>
+</html>
+<!--   
+  //   document.getElementById("year").addEventListener("blur", (e) => {
+  //     if (
+  //       parseInt(
+  //         document.getElementById("year").value ||
+  //           document.getElementById("year").value == ""
+  //       )
+  //     ) {
+  //       document.getElementById("yearError").innerText = "";
+  //       checkErrArr2 = true;
+  //     } else {
+  //       document.getElementById("yearError").innerText =
+  //         "please enter a number";
+  //       checkErrArr2 = false;
+  //     }
+  //   }); -->

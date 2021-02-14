@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input</title>
+    <style>
+      div {
+        text-align: center;
+        margin: auto;
+        margin-top: auto;
+        margin-top: 25px;
+      }
+      .box {
+        width: 250px;
+        height: 20px;
+      }
+      .bottom {
+        margin-bottom: 0%;
+      }
+      .error {
+        margin-top: 0%;
+        clear: both;
+        color: red;
+      }
+      h1 {
+        margin: auto;
+        text-align: center;
+      }
+      .radio {
+        margin: auto;
+      }
+      .radiospace {
+        width: 30px;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sign Up Form</h1>
+    <div>
+      <p id="errorForm" class="error hidden">Fix the errors below</p>
+    </div>
+    <form action="">
+      <div id="usernameField">
+        <label for="username"><strong>Username</strong></label>
+        <br />
+        <input
+          class="bottom box"
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username must be 8 - 16 characters"
+        />
+        <p id="errorUser" class="error hidden">username doesn't meet limit</p>
+      </div>
+      <div id="passwordField">
+        <label for="password"><strong>Password</strong></label>
+        <br />
+        <input
+          class="bottom box"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="password must be at least 10 characters"
+        />
+        <p id="errorPass" class="error hidden">password isn't long enough</p>
+      </div>
+
+      <div id="radioField" class="radio">
+        <p><strong>Preferred Method of Contact</strong></p>
+        <input
+          class="radiospace"
+          type="radio"
+          id="emailChoice"
+          name="contact"
+          value="email"
+          checked
+        />
+        <label for="email">Email</label>
+
+        <input
+          class="radiospace"
+          type="radio"
+          id="phoneChoice"
+          name="contact"
+          value="phone"
+        />
+        <label for="phone">Phone</label>
+
+        <input
+          class="radiospace"
+          type="radio"
+          id="textChoice"
+          name="contact"
+          value="text"
+        />
+        <label for="text">Text</label>
+      </div>
+      <div id="optionsField">
+        <label for="state">State Location</label>
+        <br />
+        <select class="box" id="state" name="state">
+          <option value="nebraska">Nebraska</option>
+          <option value="iowa">Iowa</option>
+          <option value="kansas">Kansas</option>
+          <option value="southdakota">South Dakota</option>
+          <option value="colorado">Colorado</option>
+          <option value="wyoming">Wyoming</option>
+        </select>
+      </div>
+      <br />
+      <br />
+      <div>
+        <input id="submitField" type="submit" />
+      </div>
+    </form>
+    <script>
+      let phoneRadio = document.getElementById("phoneChoice");
+      let textRadio = document.getElementById("textChoice");
+      let emailRadio = document.getElementById("emailChoice");
+      let subButton = document.getElementById("submitField");
+      let passwordChoice = document.getElementById("password");
+      let usernameChoice = document.getElementById("username");
+      let stateChoice = document.getElementById("state");
+
+      document.getElementById("submitField").addEventListener("click", (e) => {
+        let userValue = usernameChoice.value;
+        let passwordValue = passwordChoice.value;
+        let stateValue = stateChoice.value;
+        let arr1 = [phoneRadio, textRadio, emailRadio];
+        let arr2 = [userValue, passwordValue, arr1, stateValue];
+        let checkErrArr1;
+        let checkErrArr2;
+        e.preventDefault();
+        console.log(arr2);
+
+        let userError = document.getElementById("errorUser");
+        if (userValue.length < 8 || userValue.length > 16) {
+          userError.classList.remove("hidden");
+          checkErrArr1 = true;
+        } else {
+          userError.classList.add("hidden");
+          checkErrArr1 = false;
+        }
+
+        let passError = document.getElementById("errorPass");
+        if (passwordValue < 10) {
+          passError.classList.remove("hidden");
+          checkErrArr2 = true;
+        } else {
+          passError.classList.add("hidden");
+          checkErrArr2 = false;
+        }
+
+        let formError = document.getElementById("errorForm");
+        if ((checkErrArr1, checkErrArr2)) {
+          formError.classList.remove("hidden");
+        } else {
+          formError.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>

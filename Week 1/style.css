@@ -63,6 +63,7 @@ footer {
   flex-basis: 10%;
   background-color: rgb(238, 213, 104);
   align-self: start;
+  text-decoration: none;
 }
 .movie2 {
   display: flex;
@@ -107,9 +108,9 @@ p {
 }
 .homephoto {
   height: 100px;
+  cursor: pointer;
 }
 .trailer {
   text-align: center;
   margin: 5px;
-  cursor: pointer;
 }
